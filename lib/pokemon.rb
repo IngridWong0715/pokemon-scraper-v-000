@@ -16,7 +16,6 @@ class Pokemon
     stm = db.prepare("SELECT * FROM pokemon WHERE id = ?")
     stm.bind_param id, id
     row = stm.execute.flatten
-    row = rs.next
     self.new(id: id, db: db, name: row[1], type: row[2])
   end
 
